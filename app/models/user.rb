@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   
   validates :name, presence: true, length: { in: 2..20 }
-  validates :introduction, length: { maximun: 50 }
+  validates :introduction, length: { maximum: 50 }
   
   def get_profile_image(width, height)
     unless purofile_image.attached?
