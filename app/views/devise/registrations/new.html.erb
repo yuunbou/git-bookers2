@@ -4,7 +4,9 @@
       <h2>Sign up</h2>
 
       <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user' do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <div id="errors_explanation">
+          <h2><%= render "devise/shared/error_messages", resource: resource %></h2>
+        </div>
 
         <div class="field">
           <%= f.label :name %><br>
@@ -30,7 +32,7 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "Sign up", class:"btn btn-sm btn-success" %>
         </div>
       <% end %>
 
